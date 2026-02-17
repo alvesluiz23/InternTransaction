@@ -18,7 +18,7 @@ public class InternTransactionCase {
         this.balanceRepository = balanceRepository;
     }
 
-    public Stream<Transaction> transactionListById(Integer sendId){
+    public Stream<Transaction> transactionListById(String sendId){
         return transactionRepository.findByUserId(sendId);
     }
 
