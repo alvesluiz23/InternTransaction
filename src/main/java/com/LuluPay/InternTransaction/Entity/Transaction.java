@@ -1,5 +1,6 @@
 package com.LuluPay.InternTransaction.Entity;
 
+import java.time.LocalDateTime;
 import java.util.Date;
 
 public class Transaction {
@@ -8,15 +9,19 @@ public class Transaction {
     private String ReceiverId;
     private Integer transactionType;
     private Integer value;
-    private String status;
-    private Date createdAT;
-    private Date updatedAt;
+    private Integer status;
+    private LocalDateTime createdAT;
+    private LocalDateTime updatedAt;
 
-    public Transaction(String senderId, String receiverId, Integer transactionType, Integer value) {
+    public Transaction(String transactionId, String senderId, String receiverId, Integer transactionType, Integer value, Integer status, LocalDateTime createdAT, LocalDateTime updatedAt) {
+        this.transactionId = transactionId;
         this.senderId = senderId;
-        ReceiverId = receiverId;
+        this.ReceiverId = receiverId;
         this.transactionType = transactionType;
         this.value = value;
+        this.status = status;
+        this.createdAT = createdAT;
+        this.updatedAt = updatedAt;
     }
 
     public String getSenderId() {
